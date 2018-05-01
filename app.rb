@@ -1,5 +1,3 @@
-# my_app.rb
-require 'sinatra/base'
 
 class Battle < Sinatra::Base
 
