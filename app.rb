@@ -1,7 +1,7 @@
 # my_app.rb
 require 'sinatra/base'
 
-class App < Sinatra::Base
+class Battle < Sinatra::Base
 
   get '/' do
     "Hello Battle!"
