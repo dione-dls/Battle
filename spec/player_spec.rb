@@ -20,10 +20,4 @@ describe Player do
       expect(subject.health).to eq 90
     end
   end
-
-  describe '#attack' do
-    it 'reduces opponents health' do
-      expect { subject.attack(other_player) }.to change{ other_player.health }.by(-10)
-    end
-  end
 end
