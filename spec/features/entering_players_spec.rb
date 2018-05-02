@@ -24,8 +24,6 @@ feature "Attacking Player 2" do
     sign_in_and_play
     click_link('Attacking Player 2')
     click_link('OK')
-    expect(find('progress')['value']).to eq('90')
-    expect(find('progress')['max']).to eq('100')
-    expect(page).to have_text("Player 2's hit points is 90")
+    check_health('90')
   end
 end

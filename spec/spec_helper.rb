@@ -20,6 +20,8 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require_relative '../lib/game'
+require_relative '../lib/player'
 require_relative './features/web_helpers.rb'
 Capybara.app = Battle
 
