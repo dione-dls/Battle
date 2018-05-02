@@ -8,8 +8,11 @@ class Player
     @health = DEFAULT_HEALTH
   end
 
+  def attack(other_player)
+    other_player.reduce_health
+  end
+
   def reduce_health
     @health -= 10
   end
-
 end

@@ -23,10 +23,8 @@ class Battle < Sinatra::Base
   end
 
   get '/hit' do
-    "You've hit Player 2!"
-    $player2.reduce_health
-    redirect('/play')
-
+    $player1.attack($player2)
+    erb(:hit)
   end
 
   run! if app_file == $0

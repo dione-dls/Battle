@@ -2,6 +2,7 @@ require_relative '../lib/player'
 
 describe Player do
   subject { described_class.new('Dione') }
+  let(:other_player) { described_class.new('Will') }
 
   describe '#name' do
     it 'returns its name' do
@@ -17,6 +18,12 @@ describe Player do
     it 'can be reduced when opponent attacks' do
       subject.reduce_health
       expect(subject.health).to eq 90
+    end
+  end
+
+  describe '#attack' do
+    it 'reduces opponents health' do
+      expect { subject.attack(other_player) }.to change{ other_player.health }.by(-10)
     end
   end
 end

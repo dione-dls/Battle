@@ -23,7 +23,7 @@ feature "Attacking Player 2" do
   scenario 'attacking Player 2 reduces their hp' do
     sign_in_and_play
     click_link('Attacking Player 2')
-    save_and_open_page
+    click_link('OK')
     expect(find('progress')['value']).to eq('90')
     expect(find('progress')['max']).to eq('100')
     expect(page).to have_text("Player 2's hit points is 90")
