@@ -7,4 +7,9 @@ class Player
     @name = name
     @health = DEFAULT_HEALTH
   end
+
+  def reduce_health
+    @health -= 10
+  end
+
 end

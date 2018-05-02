@@ -2,7 +2,7 @@
 <h2> Player 2's name is <%= @player2_name %> </h2>
 
 
-<h3> Player 2's hit points is 40 </h3>
-<progress id = "player1" value="40" max="100"></progress>
+<h3> Player 2's hit points is <%= @player2_health %> </h3>
+<progress id = "player2" value=<%= @player2_health %> max="100"></progress>
 
 <a href='/hit'>Attacking Player 2</a>

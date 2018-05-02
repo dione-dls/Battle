@@ -13,5 +13,10 @@ describe Player do
     it 'has a default of 100' do
       expect(subject.health).to eq described_class::DEFAULT_HEALTH
     end
+
+    it 'can be reduced when opponent attacks' do
+      subject.reduce_health
+      expect(subject.health).to eq 90
+    end
   end
 end

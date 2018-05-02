@@ -7,7 +7,7 @@ feature "Entering players" do
 end
 
 feature "Hit points" do
-  xscenario "viewing opponent's hit points" do
+  scenario "viewing opponent's hit points" do
     sign_in_and_play
     check_health('100')
   end
@@ -20,9 +20,12 @@ feature "Attacking Player 2" do
     expect(page).to have_text("You've hit Player 2!")
   end
 
-  xscenario 'attacking Player 2 reduces their hp' do
+  scenario 'attacking Player 2 reduces their hp' do
     sign_in_and_play
     click_link('Attacking Player 2')
-    check_health('90')
+    save_and_open_page
+    expect(find('progress')['value']).to eq('90')
+    expect(find('progress')['max']).to eq('100')
+    expect(page).to have_text("Player 2's hit points is 90")
   end
 end

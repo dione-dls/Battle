@@ -17,11 +17,16 @@ class Battle < Sinatra::Base
   get '/play' do
     @player1_name = $player1.name
     @player2_name = $player2.name
+    @player1_health = $player1.health
+    @player2_health = $player2.health
     erb(:play)
   end
 
   get '/hit' do
     "You've hit Player 2!"
+    $player2.reduce_health
+    redirect('/play')
+
   end
 
   run! if app_file == $0
