@@ -20,5 +20,9 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  get '/hit' do
+    "You've hit Player 2!"
+  end
+
   run! if app_file == $0
 end
